@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Top10 Kandidater</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<center>
+    <h1>Velkommen - til kommunevalg 2021</h1>
+    <br>
+    <h2>Top 10 kandidater fra København</h2>
+    <table id="Tables">
+        <tr>
+            <th>Number:</th>
+            <th>Navn:</th>
+            <th>Parti:</th>
+            <th>Opstillet i kommune:</th>
+        </tr>
+        <tr id="tr1" th:border="1" th:each="kandidat : ${kandidater}">
+            <td></td>
+            <td th:text="${kandidat.getName()}"></td>
+            <td th:text="${kandidat.getParti()}"></td>
+            <td th:text="${kandidat.getOpstillerIKommune()}"></td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <p>Kilde: https://kmdvalg.dk/KV/2021/K84982101.htm</p>
+</center>
+</body>
+</html>
